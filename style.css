@@ -1,0 +1,35 @@
+.main_heading{
+    text-align: center;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    margin-bottom: 10vh;
+    text-decoration: underline;
+}
+
+.parameter p{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.parameter p input {
+    text-align: center;
+}
+
+.box{
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.check_button_card{
+    text-align: center;
+    margin: 25px;
+}
+
+.check_button{
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    
+}
+
