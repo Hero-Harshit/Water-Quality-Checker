@@ -6,13 +6,13 @@
     text-decoration: underline;
 }
 
-.parameter p{
+.parameter {
     padding: 20px;
     display: flex;
     justify-content: space-between;
 }
 
-.parameter p input {
+.parameter input {
     text-align: center;
 }
 

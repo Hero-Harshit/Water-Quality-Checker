@@ -13,21 +13,21 @@
 <body>
     
     <nav class="navbar ">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hero Harshit</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Water Quality Checker</a>
-            <a class="nav-link" href="settings.html">Settings</a>
-            <a class="nav-link" href="about_us.html">About Us</a>
-            <a class="nav-link" href="something.html">Coming Soon</a>
-            <a class="nav-link" href="something.html">Coming Soon</a>
-            <a class="nav-link disabled" aria-disabled="true">Feature Under Testing</a>
-        </div>
-        </div>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Hero Harshit</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Water Quality Checker</a>
+                <a class="nav-link" href="settings.html">Settings</a>
+                <a class="nav-link" href="about_us.html">About Us</a>
+                <a class="nav-link" href="something.html">Coming Soon</a>
+                <a class="nav-link" href="something.html">Coming Soon</a>
+                <a class="nav-link disabled" aria-disabled="true">Feature Under Testing</a>
+            </div>
+            </div>
     </div>
     </nav>    
 
@@ -36,59 +36,52 @@
 
     <h1 class="main_heading"> Water Quality Checker </h1>
 
-    
-    <div class="parameter">
-        <p> ⁂ Enter the Temperature of the water in °C :- <input class="box" type="number" id="temp_input" placeholder="Temperature"/> </p>
-        <hr style="border: 1px dotted #00aaff;"> 
-    </div>
-    
 
     <div class="parameter">
-        <p> ⁂ Enter the pH of the water :-  <input class="box" type="number" id="ph_input" placeholder="Power of Hydrogen"/> </p>
-        <hr style="border: 1px dotted #00aaff;">
+        <label for="temp_input"> ⁂ Enter the Temperature of the water in °C :- </label>
+        <input class="box" type="number" id="temp_input" placeholder="Temperature"/>
     </div>
-
 
     <div class="parameter">
-        <p> ⁂ Enter the Tds of the water :-  <input class="box" type="number" id="tds_input" placeholder="Total Dissolved Solids"/> </p>
-        <hr style="border: 1px dotted #00aaff;">
+        <label for="ph_input"> ⁂ Enter the pH of the water :- </label>
+        <input class="box" type="number" id="ph_input" placeholder="Power of Hydrogen"/>
     </div>
-
 
     <div class="parameter">
-        <p> ⁂ Enter how Hard is your water :-  <input class="box" type="number" id="hardness_input" placeholder="Hardness"/> </p>
-        <hr style="border: 1px dotted #00aaff;">
+        <label for="tds_input"> ⁂ Enter the Tds of the water :- </label>
+        <input class="box" type="number" id="tds_input" placeholder="Total Dissolved Solids"/>
     </div>
-
 
     <div class="parameter">
-        <p> ⁂ Enter the Turbidity of the water :- <input class="box" type="number" id="turbidity_input" placeholder="Turbidity"/> </p>
-        <hr style="border: 1px dotted #00aaff;">
+        <label for="hardness_input"> ⁂ Enter how Hard is your water :- </label>
+        <input class="box" type="number" id="hardness_input" placeholder="Hardness"/>
     </div>
-
 
     <div class="parameter">
-        <p> ⁂ Enter Salanity of your water :-  <input class="box" type="number" id="salanity_input" placeholder="Salanity"/> </p>
-        <hr style="border: 1px dotted #00aaff;">
+        <label for="turbidity_input"> ⁂ Enter the Turbidity of the water :- </label>
+        <input class="box" type="number" id="turbidity_input" placeholder="Turbidity"/>
     </div>
-
 
     <div class="parameter">
-        <p> ⁂ Enter Oxidation Reduction Potential of your water :-  <input class="box" type="number" id="orp_input" placeholder="ORP"/> </p>
-        <hr style="border: 1px dotted #00aaff;">
+        <label for="salinity_input"> ⁂ Enter Salinity of your water :- </label>
+        <input class="box" type="number" id="salinity_input" placeholder="Salinity"/>
     </div>
-
 
     <div class="parameter">
-        <p> ⁂ Evaluate the Electrical Conductivity of your water :-  <input class="box" type="number" id="ec_input" placeholder="Conductivity"/> </p>
-        <hr style="border: 1px dotted #00aaff;">
+        <label for="orp_input"> ⁂ Enter Oxidation Reduction Potential of your water :- </label>
+        <input class="box" type="number" id="orp_input" placeholder="ORP"/>
     </div>
-
 
     <div class="parameter">
-        <p> ⁂ Enter Dissolved Oxygen content in your water :-  <input class="box" type="number"id="do_input" placeholder="Oxygenic Index"/> </p>
-        <hr style="border: 1px dotted #00aaff;">
+        <label for="ec_input"> ⁂ Evaluate the Electrical Conductivity of your water :- </label>
+        <input class="box" type="number" id="ec_input" placeholder="Conductivity"/>
     </div>
+
+    <div class="parameter">
+        <label for="do_input"> ⁂ Enter Dissolved Oxygen content in your water :- </label>
+        <input class="box" type="number" id="do_input" placeholder="Oxygenic Index"/>
+    </div>
+
 
 
     <div class="check_button_card">
