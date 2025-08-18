@@ -6,6 +6,8 @@
 
 .parameter input {
     text-align: center;
+    background-color: white;
+    color: black;
 }
 
 .box{
@@ -25,9 +27,14 @@
     
 }
 
-.result_mp_box {
+.given_data_box {
     border: 2px solid black;
     border-radius: 20px;
+}
 
-
+.results_box{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 80vh;
 }

@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let given_data_box = document.getElementById("given_data_box");
     let tc_checkbox = document.getElementById("tc_checkbox");
     let start_assessment_btn = document.getElementById("start_assessment_btn");
-
-
+    let results_box = document.getElementById("results_box");
+    let results_p1 = document.getElementById("results_p1");
+    let results_p2 = document.getElementById("results_p2");
 
 
 
@@ -264,13 +265,115 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     tc_checkbox.addEventListener("change", function() {
-      if (this.checked) { start_assessment_btn.disabled = false; } else { start_assessment_btn.disabled = true;}
+      if (this.checked) {
+            start_assessment_btn.disabled = false; 
+        } 
+        else { 
+                start_assessment_btn.disabled = true;
+            }
     });
 
+    function start_assessment() {
+    let temp = parseFloat(water_quality_data_parameters.temp);
+    let ph = parseFloat(water_quality_data_parameters.ph);
+    let tds = parseFloat(water_quality_data_parameters.tds);
+    let hardness = parseFloat(water_quality_data_parameters.hardness);
+    let turbidity = parseFloat(water_quality_data_parameters.turbidity);
+    let salinity = parseFloat(water_quality_data_parameters.salinity);
+    let orp = parseFloat(water_quality_data_parameters.orp);
+    let ec = parseFloat(water_quality_data_parameters.ec);
+    let do_val = parseFloat(water_quality_data_parameters.do);
+    let chlorine = parseFloat(water_quality_data_parameters.chlorine);
+
+    // Clear previous results
+    results_box.innerHTML = "";
+
+    results_p1.classList.add("d-none");
+    results_p2.classList.remove("d-none");
+
+    // helper function to add results
+    function addResult(parameter, verdict, suggestion) {
+        let p = document.createElement("p");
+        p.innerHTML = `<b>${parameter}:</b> ${verdict}<br><i>Suggestion:</i> ${suggestion}`;
+        results_box.appendChild(p);
+    }
+
+    // Temperature (10–35 °C safe)
+    if (temp < 10 || temp > 35) {
+        addResult("Temperature", "❌ Unsafe: Not suitable for drinking.", "Let the water stabilize to room temperature (store for some hours) before use.");
+    } else {
+        addResult("Temperature", "✅ Safe", "No treatment needed.");
+    }
+
+    // pH (6.5–8.5 safe)
+    if (ph < 6.5 || ph > 8.5) {
+        addResult("pH", "❌ Unsafe: Outside safe range (6.5–8.5).", "Add lemon/vinegar to lower pH, or baking soda/lime to raise it. Kits are available.");
+    } else {
+        addResult("pH", "✅ Safe", "No treatment needed.");
+    }
+
+    // TDS (< 500 ppm safe)
+    if (tds > 500) {
+        addResult("TDS", "❌ Unsafe: High TDS (> 500 ppm).", "Use a Reverse Osmosis (RO) filter to reduce dissolved solids.");
+    } else {
+        addResult("TDS", "✅ Safe", "No treatment needed.");
+    }
+
+    // Hardness (< 300 mg/L safe)
+    if (hardness > 300) {
+        addResult("Hardness", "❌ Unsafe: Too hard (> 300 mg/L).", "Use a water softener or boil & cool before filtering.");
+    } else {
+        addResult("Hardness", "✅ Safe", "No treatment needed.");
+    }
+
+    // Turbidity (< 5 NTU safe)
+    if (turbidity > 5) {
+        addResult("Turbidity", "❌ Unsafe: High turbidity (> 5 NTU).", "Filter with sand/ceramic filter or let it settle and decant. Boil afterward.");
+    } else {
+        addResult("Turbidity", "✅ Safe", "No treatment needed.");
+    }
+
+    // Salinity (< 0.5 ppt safe)
+    if (salinity > 0.5) {
+        addResult("Salinity", "❌ Unsafe: Too salty.", "Use desalination (RO or distillation).");
+    } else {
+        addResult("Salinity", "✅ Safe", "No treatment needed.");
+    }
+
+    // ORP (> 250 mV safe)
+    if (orp < 250) {
+        addResult("ORP", "❌ Unsafe: Too low (< 250 mV).", "Disinfect (boiling, UV, or chlorine tablets).");
+    } else {
+        addResult("ORP", "✅ Safe", "No treatment needed.");
+    }
+
+    // EC (< 1500 µS/cm safe)
+    if (ec > 1500) {
+        addResult("Conductivity", "❌ Unsafe: High EC.", "Use Reverse Osmosis (RO) to reduce ion concentration.");
+    } else {
+        addResult("Conductivity", "✅ Safe", "No treatment needed.");
+    }
+
+    // Dissolved Oxygen (≥ 5 mg/L safe)
+    if (do_val < 5) {
+        addResult("Dissolved Oxygen", "❌ Unsafe: Too low (< 5 mg/L).", "Aerate by shaking, bubbling, or pouring between containers.");
+    } else {
+        addResult("Dissolved Oxygen", "✅ Safe", "No treatment needed.");
+    }
+
+    // Chlorine (< 4 mg/L safe)
+    if (chlorine > 4) {
+        addResult("Chlorine", "❌ Unsafe: Too high (> 4 mg/L).", "Let sit uncovered, boil, or use activated carbon filter.");
+    } else {
+        addResult("Chlorine", "✅ Safe", "No treatment needed.");
+    }
+}
 
 
-
-
+    
+    if (start_assessment_btn) {
+        start_assessment_btn.addEventListener("click", start_assessment);
+    }
 
     // Running The Check Mode Fuction Each Time On Page Reload
 
